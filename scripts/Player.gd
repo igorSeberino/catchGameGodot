@@ -23,7 +23,6 @@ func _physics_process(delta):
 
 func _on_area_2d_area_entered(area):
 	if area and is_instance_valid(area) and area.is_in_group("collectibles"):
-		print("Coletando item...")
 		item_collected.emit()
 		# Verificar se ainda é válido antes de remover
 		if is_instance_valid(area):

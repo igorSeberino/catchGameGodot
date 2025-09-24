@@ -24,7 +24,6 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("pause_quit"):
-		print("ESC pressionado - game_running: ", game_running)
 		if game_running:
 			toggle_pause()
 		else:
@@ -33,30 +32,24 @@ func _input(event):
 			get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
 
 func toggle_pause():
-	print("Toggle pause - paused: ", get_tree().paused)
 	if get_tree().paused:
 		resume_game()
 	else:
 		pause_game()
 
 func pause_game():
-	print("Pausando jogo")
-	
 	# Usar pausa real do Godot
 	get_tree().paused = true
 	
 	ui.show_pause()
 
 func resume_game():
-	print("Retomando jogo")
-	
 	# Despausar árvore do Godot
 	get_tree().paused = false
 	
 	ui.hide_pause()
 
 func _on_item_collected():
-	print("Item coletado!")
 	if game_running and ui and is_instance_valid(ui):
 		ui.add_score()
 		
@@ -74,7 +67,6 @@ func spawn_collectible():
 		
 	var collectible = collectible_scene.instantiate()
 	if not collectible:
-		print("Erro: não foi possível instanciar coletável")
 		return
 	
 	# Verificar se o sinal existe antes de conectar
@@ -89,17 +81,14 @@ func spawn_collectible():
 	collectible.global_position = Vector2(spawn_x, -50)
 	
 	add_child(collectible)
-	print("Coletável criado em: ", spawn_x)
 
 func _on_collectible_hit_ground():
-	print("Coletável tocou o chão")
 	if game_running and ui and is_instance_valid(ui):
 		var game_over = ui.lose_life()
 		if game_over:
 			end_game()
 
 func end_game():
-	print("Finalizando jogo...")
 	game_running = false
 	spawn_timer.stop()
 	
