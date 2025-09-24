@@ -1,0 +1,63 @@
+# Godot 4+ specific ignores
+.godot/
+.import/
+
+# Exported games/builds - Para GitHub não incluímos builds
+*.exe
+*.pck
+*.x86_64
+*.dmg
+*.app
+*.apk
+*.ipa
+
+# IMPORTANTE: export_presets.cfg deve ser incluído para reprodução
+# Comentado para manter: # export_presets.cfg
+
+# Build folders
+builds/
+exports/
+dist/
+
+# Godot-specific metadata files
+*.uid
+*.remap
+*.translation
+
+# Import cache
+.import/
+.importcache
+
+# Built documentation
+_build/
+
+# Backup files
+*.tmp
+*.bak
+*.swp
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE specific files
+.vscode/
+*.sublime-*
+*.code-workspace
+
+# Logs
+*.log
+logs/
+
+# Windows specific
+desktop.ini
+
+# Temporary folders
+temp/
+tmp/

@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq0qhb8xrxb6b"]
+
+[ext_resource type="Script" uid="uid://dcbi672c2cre8" path="res://scripts/Instructions.gd" id="1_vuxl2"]
+
+[node name="Instructions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vuxl2")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.2, 0.4, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "COMO JOGAR"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="InstructionsText" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[center][b]OBJETIVO:[/b][/center]
+Colete os objetos dourados que caem do céu!
+
+[center][b]CONTROLES:[/b][/center]
+[color=yellow]• A[/color] ou [color=yellow]Seta Esquerda[/color] - Mover para esquerda
+[color=yellow]• D[/color] ou [color=yellow]Seta Direita[/color] - Mover para direita
+[color=yellow]• ESC[/color] - Pausar/Sair do jogo
+
+[center][b]REGRAS:[/b][/center]
+• Cada objeto coletado aumenta sua pontuação
+• Se um objeto tocar o chão, você perde uma vida
+• Você tem [color=red]3 vidas[/color] para conseguir a maior pontuação
+• O jogo acelera conforme você progride
+
+[center][b]FIM DE JOGO:[/b][/center]
+O jogo termina quando todas as vidas acabam."
+
+[node name="BackButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "VOLTAR"
+
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

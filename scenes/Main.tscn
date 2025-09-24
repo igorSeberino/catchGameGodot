@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvydqkmmgk37x"]
+
+[ext_resource type="PackedScene" path="res://scenes/Player.tscn" id="1_6t1wh"]
+[ext_resource type="Script" path="res://scripts/Main.gd" id="1_mxpvy"]
+[ext_resource type="PackedScene" path="res://scenes/UI.tscn" id="3_e2kn8"]
+
+[node name="Main" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_mxpvy")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 800.0
+offset_bottom = 600.0
+color = Color(0.2, 0.3, 0.8, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_6t1wh")]
+position = Vector2(400, 500)
+
+[node name="SpawnTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 2.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(400, 300)
+
+[node name="UI" parent="." instance=ExtResource("3_e2kn8")]
