@@ -35,31 +35,42 @@ Catch Game é um jogo arcade casual onde o jogador controla um personagem que de
 - **ESC**: Pausar jogo / Voltar ao menu / Sair
 - **Mouse**: Navegar nos menus e clicar nos botões
 
-## Estrutura do Projeto
+## Estrutura do Repositório GitHub
 ```
-GODOT/
-├── scenes/              # Cenas do jogo
-│   ├── MainMenu.tscn   # Menu principal
-│   ├── Main.tscn       # Cena principal do jogo
-│   ├── Instructions.tscn # Tela de instruções
-│   ├── Player.tscn     # Cena do jogador
-│   ├── Collectible.tscn # Cena dos objetos coletáveis
-│   └── UI.tscn         # Interface do usuário
-├── scripts/            # Scripts em GDScript
-│   ├── MainMenu.gd     # Lógica do menu principal
-│   ├── Main.gd         # Lógica principal do jogo
-│   ├── Instructions.gd # Controle da tela de instruções
-│   ├── Player.gd       # Controle do jogador
-│   ├── Collectible.gd  # Comportamento dos coletáveis
-│   └── UI.gd          # Interface, pontuação e menus
-├── .godot/             # Arquivos internos do Godot
-├── project.godot       # Arquivo de configuração do Godot
-├── export_presets.cfg  # Configurações de export
-├── icon.svg           # Ícone do projeto
-├── README.md          # Este arquivo (documentação técnica)
-├── README.txt         # Manual do usuário final
-└── GDD_CatchGame.md   # Game Design Document
+catchGameGodot/
+├── scenes/                    # Cenas do jogo (.tscn)
+│   ├── MainMenu.tscn         # Menu principal
+│   ├── Main.tscn             # Cena principal do jogo
+│   ├── Instructions.tscn     # Tela de instruções
+│   ├── Player.tscn           # Cena do jogador
+│   ├── Collectible.tscn      # Cena dos objetos coletáveis
+│   └── UI.tscn               # Interface do usuário
+├── scripts/                   # Scripts em GDScript (.gd)
+│   ├── MainMenu.gd           # Lógica do menu principal
+│   ├── Main.gd               # Lógica principal do jogo
+│   ├── Instructions.gd       # Controle da tela de instruções
+│   ├── Player.gd             # Controle do jogador
+│   ├── Collectible.gd        # Comportamento dos coletáveis
+│   └── UI.gd                 # Interface, pontuação e menus
+├── project.godot             # Arquivo de configuração do Godot
+├── export_presets.cfg        # Configurações de export do projeto
+├── icon.svg                  # Ícone do projeto
+├── .gitignore               # Configuração do Git (ignora builds)
+├── GDD_CatchGame.md         # Game Design Document completo
+├── PLANEJAMENTO_CatchGame.xlsx # Planilha de planejamento
+├── README.md                # Documentação técnica (este arquivo)
+└── README.txt               # Manual do usuário final
 ```
+
+**📁 Arquivos Ignorados pelo Git (.gitignore):**
+- `Catch Game.exe` / `Catch Game.pck` → Builds executáveis (entrega via ZIP)
+- `.godot/` → Cache do editor Godot
+- `*.uid` → Metadados regeneráveis
+- Arquivos temporários e de sistema
+
+**🎯 Separação de Responsabilidades:**
+- **GitHub:** Código fonte + documentação (para desenvolvedores)
+- **Entrega ZIP:** Código fonte + builds executáveis (para professor)
 
 ## Características do Jogo
 - **Jogador**: Retângulo verde controlado pelo teclado
@@ -103,12 +114,27 @@ GODOT/
 - **Version Control:** Git (através de VS Code integration)
 - **Documentation:** Markdown para compatibilidade e versionamento
 
-## Como Abrir no Godot
-1. Abra o Godot Engine
-2. Clique em "Import"
-3. Navegue até a pasta do projeto e selecione o arquivo `project.godot`
-4. Clique em "Import & Edit"
-5. Execute o jogo pressionando F5 ou clicando no botão "Play"
+## Como Usar este Repositório
+
+### 📥 Para Clonar e Executar:
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/igorSeberino/catchGameGodot.git
+   ```
+
+2. **Abra no Godot Engine 4.4.1+:**
+   - Abra o Godot Engine
+   - Clique em "Import"
+   - Navegue até a pasta clonada e selecione `project.godot`
+   - Clique em "Import & Edit"
+
+3. **Execute o jogo:**
+   - Pressione F5 ou clique no botão "Play"
+   - Ou exporte para sua plataforma usando as configurações em `export_presets.cfg`
+
+### 🎮 Para Apenas Jogar:
+- Os builds executáveis não estão no GitHub (apenas código fonte)
+- **Entrega acadêmica:** Inclui executável Windows via arquivo ZIP
 
 ## Versão do Godot
 Este projeto foi criado e testado no Godot 4.4.1 stable
